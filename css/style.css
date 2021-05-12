@@ -17,7 +17,7 @@ body {
   margin-left: 10px;
   padding: inherit;
   font-weight: bold;
-  background-color: rgb(245, 102, 7);
+  background-color: rgb(127, 4, 131);
   font-family: Georgia, Times, "Times New Roman", serif;
 }
 
@@ -35,7 +35,7 @@ body {
 
 @media (max-width: 991.98px) {
   .navbar-expand-lg {
-      background-color: rgb(243, 84, 10);
+      background-color: rgb(109, 2, 112);
   }
 
   .navbar {
@@ -87,8 +87,8 @@ body {
 }
 
 img {
-  width: 70%;
-  height: 70%;
+  width: 50%;
+  height: 60%;
 }
 
 .description-image {
@@ -99,7 +99,7 @@ img {
 
 p {
   font-family: sans-serif;
-  color: #f76809;
+  color: #9807a5;
   ;
   display: block;
   font-size: 0.9em;
