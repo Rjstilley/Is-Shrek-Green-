@@ -145,13 +145,14 @@ function makeResponsive() {
     }
 
     // Retrieve data from the CSV file and execute everything below
-    d3.csv("data/data.csv").then(function (stateData, err) {
+    //ID,Patient Age,Patient Sex,Left-Fundus,Right-Fundus,Left-Diagnostic Keywords,Right-Diagnostic Keywords,N,D,G,C,A,H,M,O,filepath,labels,target,filename
+    d3.csv("data/full_df.csv").then(function (stateData, err) {
         if (err) throw err;
 
         // parse data
         stateData.forEach(function (data) {
-            data.poverty = +data.poverty;
-            data.povertyMoe = +data.povertyMoe;
+            data.ID = +data.ID;
+            data.Age = +data.PatientSex;
             data.age = +data.age;
             data.ageMoe = +data.ageMoe;
             data.income = +data.income;
