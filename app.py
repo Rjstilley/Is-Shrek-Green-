@@ -31,26 +31,27 @@ def api():
     data = []
     index = 0
     for item in results:
-        data.append({'ID': results[index[0]],
-                     'Patient Age': results[index[1]],
-                     'Patient Sex': results[index[2]],
-                     'Left-Diagnostic Keywords': results[index[3]],
-                     'Right-Diagnostic Keywords': results[index[4]],
-                     'Normal': results[index[5]],
-                     'Diabetes': results[index[6]],
-                     'Glaucoma': results[index[7]],
-                     'Cataract': results[index[8]],
-                     'Age Related Macular Degeneration': results[index[9]],
-                     'Hypertension': results[index[10]],
-                     'Myopia': results[index[11]],
-                     'Other': results[index[12]]
+        print(item)
+        data.append({'ID': results[index][0],
+                     'Patient Age': results[index][1],
+                     'Patient Sex': results[index][2],
+                     'Left-Diagnostic Keywords': results[index][3],
+                     'Right-Diagnostic Keywords': results[index][4],
+                     'Normal': results[index][5],
+                     'Diabetes': results[index][6],
+                     'Glaucoma': results[index][7],
+                     'Cataract': results[index][8],
+                     'Age Related Macular Degeneration': results[index][9],
+                     'Hypertension': results[index][10],
+                     'Myopia': results[index][11],
+                     'Other': results[index][12]
                      })
         index += 1
 
     return jsonify(data)
 
 
-port = int(os.environ.get('PORT', 5000))
+port = int(os.environ.get('PORT', 8000))
 
 
 if __name__ == "__main__":
