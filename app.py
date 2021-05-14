@@ -1,39 +1,57 @@
 import sqlalchemy
-from sqlalchemy import create_engine, func
-from flask import Flask, jsonify
+from sqlalchemy import create_engine
+from flask import Flask, render_template, jsonify
+import os
 
-
-# Create a link to DB
-# session = Session(engine)
-
-# results = session.query(Eye.Eye).all()
-# session.close()
-
-# return jsonify(results)
-
-
-# for x in data:
-#     print(x)
 
 # Create an instance of Flask
 app = Flask(__name__)
 
 # Create a connection to DB
 rds_connection_string = "postgres:postgres@localhost:5432/Eye"
-engine = create_engine(f'postgresql://{rds_connection_string}')
-
-# Query database
-data = engine.execute('SELECT * FROM "Eye"')
-
-# Route to render index.html template using data from Postgres
 
 
 @app.route("/")
 def home():
 
     # Return template and data
-    return render_template("index.html", name=data)
+    return render_template("index.html")
+
+
+# @app.route("/")
+# def default():
+#     return (os.environ.get('NAME', 'Name not configured'))
+
+
+@app.route("/api")
+def api():
+    engine = create_engine(f'postgresql://{rds_connection_string}')
+    # Query database
+    results = engine.execute('SELECT * FROM "Eye"').fetchall()
+    data = []
+    index = 0
+    for item in results:
+        data.append({'ID': results[index[0]],
+                     'Patient Age': results[index[1]],
+                     'Patient Sex': results[index[2]],
+                     'Left-Diagnostic Keywords': results[index[3]],
+                     'Right-Diagnostic Keywords': results[index[4]],
+                     'Normal': results[index[5]],
+                     'Diabetes': results[index[6]],
+                     'Glaucoma': results[index[7]],
+                     'Cataract': results[index[8]],
+                     'Age Related Macular Degeneration': results[index[9]],
+                     'Hypertension': results[index[10]],
+                     'Myopia': results[index[11]],
+                     'Other': results[index[12]]
+                     })
+        index += 1
+
+    return jsonify(data)
+
+
+port = int(os.environ.get('PORT', 5000))
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=port)
