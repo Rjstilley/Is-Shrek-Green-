@@ -20,7 +20,10 @@ d3.json("/api").then(data => {
         height: 400,
         width: 500,
         title: "Eye Diseases by Gender",
-        background- color: #d1cfcf
+        marker: {
+            colors: ["rebeccapurple", "aquamarine"]
+        }
+    }
 };
 
 Plotly.newPlot("pie", data, layout);
