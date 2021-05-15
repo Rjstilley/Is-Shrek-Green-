@@ -1,17 +1,16 @@
 console.log("i am app");
 
 d3.json("/api").then(data => {
-    console.log('this is data loaded from the api. ');
-    console.log(data);
-    
-    data.forEach(element => {
-        console.log(element)
-        Male = []
-        Female = []
+    // console.log('this is data loaded from the api. ');
+    // console.log(data);
 
-        if (element.Patient_Sex === "Male" )
-            {Male = Male +1}
-        else {Female = Female +1}
+    data.forEach(element => {
+        // console.log(element)
+        Male = 0
+        Female = 0
+
+        if (element.Patient_Sex === "Male") { Male = Male + 1 }
+        else { Female = Female + 1 }
 
     });
 
