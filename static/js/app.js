@@ -18,10 +18,12 @@ d3.json("/api").then(data => {
 
     var layout = {
         height: 400,
-        width: 500
-    };
+        width: 500,
+        title: "Eye Diseases by Gender",
+        background- color: #d1cfcf
+};
 
-    Plotly.newPlot('#pie', data, layout);
+Plotly.newPlot("pie", data, layout);
 
 })
 
