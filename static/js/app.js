@@ -69,6 +69,8 @@ d3.json("/api").then(data => {
         showlegend: false
     }];
 
+
+
     var layout2 = {
         height: 400,
         width: 500,
@@ -90,4 +92,59 @@ d3.json("/api").then(data => {
 
     Plotly.newPlot("bar", bar_data, layout2);
 
+
+  //Create pie chart for left and right eye diseases
+//Create pie chart for gender
+Left_normal = 0
+Right_normal = 0
+row = 0
+data.forEach(element => {
+    // console.log(element.length)
+    row = row + 1
+
+    if (element.Left_Diagnostic_Keywords.includes("normal")) { Left_normal = Left_normal + 1 }
+
+    if (element.Right_Diagnostic_Keywords.includes("normal")) { Right_normal = Right_normal + 1 }
+    
 });
+
+Left = row - Left_normal
+Right = row - Right_normal
+
+
+var chart = [{
+    values: [Left, Right],
+    labels: ['Left', 'Right'],
+    type: 'pie',
+    marker: {
+        colors: ['rgb(56, 75, 126)', 'rgb(18, 36, 37)']
+    },
+    showlegend: true
+}];
+
+var layout3 = {
+    height: 400,
+    width: 500,
+    title: {
+        text: "Eye Diseases In The Left vs Right Eye ",
+        font: {
+            family: 'sans-serif',
+            size: 24,
+            color: '#9807a5'
+        },
+
+    },
+    plot_bgcolor: "black",
+    paper_bgcolor: "#d1cfcf"
+
+}
+
+Plotly.newPlot("pie2", chart, layout3);
+
+
+
+
+
+});
+
+
