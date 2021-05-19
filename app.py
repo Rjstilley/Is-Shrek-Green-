@@ -31,7 +31,7 @@ def api():
     data = []
     index = 0
     for item in results:
-        print(item)
+        # print(item)
         data.append({'ID': results[index][0],
                      'Patient_Age': results[index][1],
                      'Patient_Sex': results[index][2],
