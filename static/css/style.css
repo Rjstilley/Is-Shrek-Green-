@@ -12,7 +12,7 @@ body {
     text-shadow: rgba(8, 8, 8, 0.5) 0px 3px 3px;
 }
 
-.navbar {
+/* .navbar {
   max-height: 50px;
   background-color: #ffffff;
   font-size: 15px;
@@ -25,7 +25,7 @@ body {
   font-weight: bold;
   background-color: rgb(127, 4, 131);
   font-family: Georgia, Times, "Times New Roman", serif;
-}
+} */
 
 .dropdown-item {
   color: #839496;
@@ -54,9 +54,9 @@ body {
           background-color: white;
       }
 
-  .navbar-brand {
+  /* .navbar-brand {
       padding: 10px;
-  }
+  } */
 
   button {
       margin-left: auto;
@@ -92,9 +92,14 @@ body {
   font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-img {
+/* img {
   width: 60%;
   height: 40%;
+} */
+
+#navimg {
+  width: 50px;
+  height: 50px;
 }
 
 .description-image {
@@ -149,17 +154,19 @@ p {
 }
 .imageNav-header {text-align:center;}
 
-/* The side navigation menu */
-sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+.navbar-brand {
+
+    font-size:x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
 
+.navbar-toggler{
+    background-color: rgb(45, 0, 128);
+    color: rgb(197, 107, 107);
+    padding: 15px;
+    margin-bottom:0px;
+    font-size:x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
