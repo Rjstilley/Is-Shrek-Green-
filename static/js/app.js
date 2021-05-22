@@ -126,7 +126,7 @@ d3.json("/api").then(data => {
         height: 400,
         width: 500,
         title: {
-            text: "Eye Diseases In The Left vs Right Eye ",
+            text: "Eye Disease by Side",
             font: {
                 family: 'sans-serif',
                 size: 24,
