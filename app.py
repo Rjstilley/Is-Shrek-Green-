@@ -49,7 +49,10 @@ def api():
         index += 1
 
     return jsonify(data)
-
+@app.route('/gender.html')
+def gender():
+    return render_template('gender.html')
+    # add for all other pages
 
 port = int(os.environ.get('PORT', 8000))
 
