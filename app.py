@@ -49,10 +49,54 @@ def api():
         index += 1
 
     return jsonify(data)
+
+
 @app.route('/gender.html')
 def gender():
     return render_template('gender.html')
     # add for all other pages
+
+    return jsonify(data)
+
+
+
+@app.route('/Left_Right.html')
+def Left_Right():
+    return render_template('Left_Right.html')
+    # add for all other pages
+    
+    return jsonify(data)
+
+
+
+@app.route('/Gender_Disease.html')
+def Gender_Disease():
+    return render_template('Gender_Disease.html')
+
+
+
+@app.route('/condition.html')
+def condition():
+    return render_template('condition.html')
+   
+
+
+@app.route('/table.html')
+def table():
+    return render_template('table.html')
+
+
+
+    
+    
+
+
+
+
+
+
+
+
 
 port = int(os.environ.get('PORT', 8000))
 
