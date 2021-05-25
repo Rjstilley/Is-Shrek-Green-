@@ -38,7 +38,7 @@ d3.json("/api").then(data => {
 
     }
 
-    Plotly.newPlot("pie", chart, layout1);
+    // Plotly.newPlot("pie", chart, layout1);
 
     //Create bar chart for condition Normal
     Glaucoma = 0
@@ -90,7 +90,7 @@ d3.json("/api").then(data => {
 
     }
 
-    Plotly.newPlot("bar", bar_data, layout2);
+    // Plotly.newPlot("bar", bar_data, layout2);
 
 
     //Create pie chart for left and right eye diseases
@@ -139,7 +139,7 @@ d3.json("/api").then(data => {
 
     }
 
-    Plotly.newPlot("pie2", chart, layout3);
+    // Plotly.newPlot("pie2", chart, layout3);
 
 
     //Create bar chart for comparing gender and disease
